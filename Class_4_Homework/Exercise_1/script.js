@@ -28,7 +28,6 @@ body.appendChild(ul);
 // Function ONE return how many digits that number has!
 let functionOne = num => { return `Your number ${num} has ${num.toString().length} digits` };
 
-
 // Function TWO return if number its even or odd!
 let functionTwo = num => { return num % 2 === 0 ? `is an even number` : `is an odd number` };
 
@@ -37,10 +36,9 @@ let functionThree = num => { return num >= 0 ? `is a positive number` : `is a ne
 
 button.addEventListener("click", () => {
     let li = document.createElement("li");
-    li.innerHTML += `${functionOne(input.value)},
-    ${functionTwo(input.value)}, and
-    ${functionThree(input.value)}!`
+    li.innerHTML += `${allFunctions(input.value)}`;
     ul.appendChild(li);
+    console.log(allFunctions(input.value));
     clearInput();
 });
 
@@ -48,6 +46,6 @@ let clearInput = () => {input.value = ""};
 
 // BONUS Function
 let allFunctions = num => {
-    return `${functionOne(num)}, ${functionTwo(num)}, ${functionThree(num)}`};
+    return `${functionOne(num)}, ${functionTwo(num)} and ${functionThree(num)}!`};
 console.log(allFunctions(23));
 console.log(allFunctions(-1));
